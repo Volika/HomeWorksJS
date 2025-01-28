@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Epilogue:regular,500,600,700,800,900&display=swap");
+
+@import "_fonts.scss";
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_functions.scss";
+@import "_mixins.scss";
+@import "_common.scss";
+@import "_header.scss";
+@import "_main0.scss";
+
+/* Основні стилі */
+
+body {
+   font-family: $fontFamily;
+   font-size: 1rem;
+   color: $mainTextColor;
+   background: $mainBgUrl;
+}
+.wrapper {
+   min-height: 100%;
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   background: $mainBgOpacity;
+}
+.wrapper > main {
+   flex-grow: 1;
+}
+/* --------------------- */
+[class*="__container"] {
+   max-width: 75rem;
+   padding-inline: 0.9375rem;
+   margin: 0 auto;
+}
+.wrapper__title {
+   font-size: 1.25rem;
+   border-bottom: 0.0625rem solid black;
+   padding-block: 0.625rem;
+}

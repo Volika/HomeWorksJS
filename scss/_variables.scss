@@ -1,0 +1,32 @@
+/* Variables */
+
+$fontFamily: "Gilroy", sans-serif;
+
+$mainTextColor: #000000;
+$exerciseTitleColor: #ef6d58;
+
+$choiceColor: rgb(156, 88, 239);
+$choiceColorHover: rgb(100, 48, 163);
+$linkColor: rgb(156, 88, 239);
+$linkColorHover: rgb(100, 48, 163);
+
+$borderColor1: rgba(156, 88, 239, 0.4);
+$borderColorShadow: rgba(0, 0, 0, 0.3);
+$borderColorShadowHover: rgb(40, 41, 62);
+$borderColorLogo: rgba(255, 255, 255, 0.3);
+$borderColorLogoHover: #2a32c595;
+$bgColor: rgb(225, 225, 225);
+
+$borderColor2: #1f1f1f;
+
+$bgColorRed: rgb(242, 0, 0);
+$bgColorRedHover: darken($bgColorRed, 25%);
+$bgColorRedHover2: lighten($bgColorRed, 25%);
+
+$mainBgUrl: url("../img/concrete-1646788_1920.jpg") 0 0 / cover no-repeat;
+// $mainBgUrl: url("../img/pexels-photo-255379.webp") 0 0 / cover no-repeat;
+$mainBgOpacity: rgba(240, 240, 240, 0.7);
+// $bb: darken()
+//    background-color: lighten(#f0f0f0, 70%);
+/* background-color: #28293E; */
+// background-color: #fdf0e9;

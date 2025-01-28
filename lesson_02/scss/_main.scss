@@ -1,0 +1,83 @@
+/* --- main ---- */
+
+.main {
+   padding-inline: 0.9375rem;
+}
+.main__container {
+   /* width: 108.75rem; */
+   padding: 4.375rem 1.25rem 3.125rem 1.25rem;
+}
+
+.grid__items {
+   display: grid;
+   grid-template-columns: repeat(2, minmax(17.5rem, 1fr));
+   gap: 1rem;
+}
+.grid__item {
+   padding: 0.5rem;
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
+   border: 0.0625rem solid $borderColor1;
+   box-shadow: 0 0 0.25rem $borderColorShadow;
+   background-color: $bgColor;
+   border-radius: 0.5rem;
+}
+li > img {
+   width: 8rem;
+   height: 4rem;
+}
+.grid__link {
+   position: relative;
+   color: $linkColor;
+   line-height: 1.5;
+   padding: 0 0.5rem;
+   align-items: center;
+   font-weight: 700;
+   margin-block-end: 0.5rem;
+   transition:
+      background-color 0.3s,
+      color 0.3s;
+}
+.main__title {
+   position: relative;
+   color: $exerciseTitleColor;
+   line-height: 1.5;
+   padding: 0 0.5rem;
+   align-items: center;
+   font-weight: 700;
+   margin-block-end: 0.5rem;
+   transition:
+      background-color 0.3s,
+      color 0.3s;
+}
+
+.grid__item img {
+   object-fit: cover;
+   object-position: 0 bottom;
+   width: 10rem;
+   height: 5rem;
+   aspect-ratio: 128 / 64;
+   overflow: hidden;
+   border-radius: 0.5rem;
+   /* align-items: end; */
+}
+
+.grid__link:hover {
+   color: $linkColorHover;
+   font-weight: 700;
+   transition: font-weight 0.3s;
+}
+
+.grid__item:hover {
+   box-shadow: 0.5rem 0.25rem 0.25rem $borderColorShadowHover;
+   border-radius: 0.5rem;
+
+   /* transform: rotateY(180deg); */
+   transform: translateY(-0.0625rem);
+   transition: all 0.3s;
+}
+
+.main__script {
+   padding-inline: 2rem;
+}

@@ -8,7 +8,6 @@ const secondInMinute = 60;
 
 const dataInputHours = Math.floor(dataInput / secondInHour);
 const dataInputMinutes = Math.floor(dataInput % secondInHour / secondInMinute);
-// const dataInputMinutes = Math.floor((dataInput - (dataInputHours * secondInHour)) / secondInMinute);
 const dataInputSecond = Math.floor(dataInput % secondInHour % secondInMinute);
 
 // const lenThousand = dataInput / 1000;

@@ -8,12 +8,12 @@
    padding: 4.375rem 1.25rem 3.125rem 1.25rem;
 }
 
-.main-list__items {
-   display: flex;
-   flex-direction: column;
+.grid__items {
+   display: grid;
+   grid-template-columns: repeat(2, minmax(17.5rem, 1fr));
    gap: 1rem;
 }
-.main-list__item {
+.grid__item {
    padding: 0.5rem;
    display: flex;
    flex-direction: column;
@@ -27,7 +27,7 @@ li > img {
    width: 8rem;
    height: 4rem;
 }
-.main-list__link {
+.grid__link {
    position: relative;
    color: $linkColor;
    line-height: 1.5;
@@ -38,9 +38,6 @@ li > img {
    transition:
       background-color 0.3s,
       color 0.3s;
-}
-.main-list__link span {
-   color: $mainTextColor;
 }
 .main__title {
    position: relative;
@@ -55,7 +52,7 @@ li > img {
       color 0.3s;
 }
 
-.main-list__item img {
+.grid__item img {
    object-fit: cover;
    object-position: 0 bottom;
    width: 10rem;
@@ -66,13 +63,13 @@ li > img {
    /* align-items: end; */
 }
 
-.main-list__link:hover {
+.grid__link:hover {
    color: $linkColorHover;
    font-weight: 700;
    transition: font-weight 0.3s;
 }
 
-.main-list__item:hover {
+.grid__item:hover {
    box-shadow: 0.5rem 0.25rem 0.25rem $borderColorShadowHover;
    border-radius: 0.5rem;
 

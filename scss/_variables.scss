@@ -24,7 +24,8 @@ $bgColorRedHover: darken($bgColorRed, 25%);
 $bgColorRedHover2: lighten($bgColorRed, 25%);
 
 $mainBgUrl: url("../img/concrete-1646788_1920.jpg") 0 0 / cover no-repeat;
-// $mainBgUrl: url("../img/pexels-photo-255379.webp") 0 0 / cover no-repeat;
+$mainBgUrl2: url("../img/pexels-photo-255379.webp") 0 0 / cover no-repeat;
+// $mainBgUrlLighten: lighten($mainBgUrl, 25%);
 $mainBgOpacity: rgba(240, 240, 240, 0.7);
 // $bb: darken()
 //    background-color: lighten(#f0f0f0, 70%);

@@ -5,10 +5,10 @@
    left: 0;
    width: 100%;
    z-index: 500;
+   background: linear-gradient($mainBgOpacity, $mainBgOpacity), $mainBgUrl;
 }
 
 .header__container {
-   // background-color: #28293e;
    display: flex;
    align-items: center;
    min-height: 3.75rem;
@@ -36,29 +36,45 @@
    transition: color 0.3s;
    line-height: 1.33333;
 }
+.logo-header__link {
+   display: inline-flex;
+}
 .logo-header__img {
    width: 3rem;
    height: 3rem;
    // border-radius: 1.25rem;
 }
 .logo-header__name {
-   font-weight: 700;
+   font-size: 16px;
+   max-width: 120px;
+   font-weight: 600;
+   padding-inline: 24px;
    display: inline-flex;
    align-items: center;
    gap: 1rem;
 }
-.logo-header:hover {
+.logo-header__name--main {
+   padding-inline-start: 32px;
+   font-weight: 800;
+   font-size: 32px;
+   max-width: none;
+}
+.logo-header__link:hover {
    color: $linkColorHover;
    border-color: initial;
    transition: color 0.3s;
 }
-
+.logo-header__link--exersice {
+   color: $borderColorLogoHover;
+   text-decoration: underline;
+}
 .logo-header__number {
    // content: " 2";
-   flex-shrink: 0;
-   font-size: 2rem;
-   font-weight: 800;
+   align-self: center;
+   // flex-shrink: 0;
+   font-size: 24px;
+   font-weight: 600;
    line-height: 1.11111;
    letter-spacing: -0.125rem;
-   padding-inline-start: 1.25rem;
+   padding-inline-start: 24px;
 }

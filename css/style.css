@@ -908,6 +908,7 @@ hr {
 }
 
 .img-512-0 {
+  border-radius: 6px;
   inline-size: 75px;
   block-size: 75px;
   -o-object-fit: contain;
@@ -916,6 +917,7 @@ hr {
 }
 
 .img-512 {
+  border-radius: 12px;
   inline-size: 200px;
   block-size: 200px;
   -o-object-fit: contain;

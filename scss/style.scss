@@ -83,12 +83,14 @@ hr {
    border-bottom: 1px solid #e95b5b;
 }
 .img-512-0 {
+   border-radius: 6px;
    inline-size: 75px;
    block-size: 75px;
    object-fit: contain;
    background-color: #ffffff;
 }
 .img-512 {
+   border-radius: 12px;
    inline-size: 200px;
    block-size: 200px;
    object-fit: contain;

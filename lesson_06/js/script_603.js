@@ -29,15 +29,15 @@ function drawTriangle(rowCount) {
       let row = "" // Починаємо з порожнього рядка
 
       for (let j = 0; j < rowCount; j++) {
-         if (j < rowCount - i) {
+          if (j < rowCount - i) {
               row += "&nbsp;" // Додаємо пробіли
-         } else {
+          } else {
               row += "о" // Додаємо "о"
-         }
+          }
       }
 
       document.write(row + "<br>") // Виводимо рядок на екран
-   }
+  }
 }
 
    let rowCount = getRowCount()

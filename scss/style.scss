@@ -10,6 +10,7 @@
 
 @import "_main0.scss";
 @import "_main02.scss";
+@import "_main03.scss";
 
 /* Основні стилі */
 
@@ -40,16 +41,6 @@ body {
    border-bottom: 0.0625rem solid black;
    padding-block: 0.625rem;
 }
-.tab-55 {
-   max-width: 500px;
-   display: grid;
-   grid-template-columns: 0.5fr 1fr;
-   align-items: center;
-   column-gap: 10px;
-   &:not(:last-child) {
-      margin-block-end: 5px;
-   }
-}
 label {
    font-size: 16px;
 }
@@ -57,42 +48,4 @@ input {
    border: 1px solid #000000;
    width: 100%;
    padding: 5px;
-}
-.tab-56 {
-   border: 1px solid #610707;
-   border-collapse: collapse;
-   text-align: center;
-   // background-color: #6d505056;
-   font-size: 20px;
-}
-.td-56 {
-   border: 1px solid #e95b5b;
-   // border-inline-end: 0.0625rem dashed white;
-   padding: 15px;
-}
-.tab-59 {
-   display: inline-block;
-   margin-inline: 10px;
-}
-.tab-507 {
-   font-size: 20px;
-   font-weight: 700;
-}
-hr {
-   width: 200px;
-   border-bottom: 1px solid #e95b5b;
-}
-.img-512-0 {
-   border-radius: 6px;
-   inline-size: 75px;
-   block-size: 75px;
-   object-fit: contain;
-   background-color: #ffffff;
-}
-.img-512 {
-   border-radius: 12px;
-   inline-size: 200px;
-   block-size: 200px;
-   object-fit: contain;
-   background-color: #ffffff;
 }

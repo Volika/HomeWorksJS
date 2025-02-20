@@ -2,10 +2,10 @@
 if (confirm('Почати тестування?')) {
 /* 01                    
    Відобразити трикутник за допомогою символів «о» 
-   O 
-   O O  
-   O O O  
-   O O O O  
+       O 
+      O O  
+     O O O  
+    O O O O  
    O O O O O  
 
 */
@@ -28,7 +28,9 @@ function drawTriangle(rowCount) {
    for (let i = 1; i <= rowCount; i++) {
       let row = "" 
       for (let j = 0; j < i; j++) {
-         row += "о" 
+         if (rowCount - i >= j) document.write(`&nbsp;`)
+            else document.write(`o`)
+         // row += "о" 
       }
       document.write(row + "<br>") 
    }

@@ -12,6 +12,10 @@
    display: grid;
    grid-template-columns: repeat(2, minmax(17.5rem, 1fr));
    gap: 0.5rem;
+   &--4 {
+      grid-template-columns: repeat(4, 1fr);
+      font-size: 12px;
+   }
 }
 .grid__item {
    padding: 0.5rem;

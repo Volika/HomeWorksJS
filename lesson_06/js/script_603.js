@@ -2,11 +2,11 @@
 if (confirm('Почати тестування?')) {
 /* 01                    
    Відобразити трикутник за допомогою символів «о» 
-       O 
-      O O  
-     O O O  
-    O O O O  
    O O O O O  
+    O O O O  
+     O O O  
+      O O  
+       O 
 
 */
 
@@ -25,20 +25,22 @@ function getRowCount() {
 
 // Функція малює трикутник
 function drawTriangle(rowCount) {
-   for (let i = 1; i <= rowCount; i++) {
-      let row = "" // Починаємо з порожнього рядка
+   for (let i = 0; i < rowCount; i++) {
+      let row = "" 
 
       for (let j = 0; j < rowCount; j++) {
-          if (j < rowCount - i) {
-              row += "&nbsp;" // Додаємо пробіли
-          } else {
-              row += "о" // Додаємо "о"
-          }
+            if (j < i) {
+               row += "&nbsp;" 
+            } else {
+               row += "о" 
+            }
       }
 
-      document.write(row + "<br>") // Виводимо рядок на екран
-  }
+      document.write(row + "<br>") 
+   }
+
 }
+
 
    let rowCount = getRowCount()
    drawTriangle(rowCount)

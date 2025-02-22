@@ -44,5 +44,6 @@ function drawTriangle(rowCount) {
 
    let rowCount = getRowCount()
    drawTriangle(rowCount)
+  
 
 }

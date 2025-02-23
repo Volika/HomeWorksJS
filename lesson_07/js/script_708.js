@@ -21,7 +21,7 @@ function createBanner(image, title, link) {
      createBanner(   
    `../img/kozak-04.webp`, 
    "Натисніть, щоб дізнатися більше!", 
-   "https://example.com"
+   "https://etnoxata.com.ua/%C2%ABvse-pro-kozakiv%C2%BB-narodzhennja-ta-druge-zhittja-legendi/"
 )
 
 

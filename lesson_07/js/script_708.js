@@ -9,7 +9,7 @@ if (confirm('Почати тестування?')) {
 function createBanner(image, title, link) {
    document.write(`
       <div>
-         <h2>${title}</h2>
+         <h2 class="span-color">${title}</h2>
          <a href="${link}" target="_blank">
             <img class="img-512" src="${image}" alt="${title}">
          </a>
@@ -19,9 +19,9 @@ function createBanner(image, title, link) {
 
 // Виклик функції з переданими параметрами
      createBanner(   
-   `../img/kozak-04.webp`, 
-   "Натисніть, щоб дізнатися більше!", 
-   "https://etnoxata.com.ua/%C2%ABvse-pro-kozakiv%C2%BB-narodzhennja-ta-druge-zhittja-legendi/"
+   `../img/kozak-00.webp`, 
+   `KozakyTV`, 
+   `https://www.youtube.com/@KozakyTV/videos`
 )
 
 

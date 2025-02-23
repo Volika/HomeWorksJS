@@ -1,49 +1,54 @@
 "use strict"
 if (confirm('Почати тестування?')) {
 
-/* 07
-Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у функцію);
+/* 06
+Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців (таблиця заповнюється заданим фіксованим повідомленням).
 
 */
 
-  // Вводимо початкові шляхи всіх зображень
-   const img01 = `../img/kozak-01.webp`
-   const img02 = `../img/kozak-02.webp`
-   const img03 = `../img/kozak-03.png`
-   const img04 = `../img/kozak-04.webp`
-
-   document.write(`Можливі зображення:<br>`)
-   document.write(` <img class="img-512-0" src="${img01}">`)
-   document.write(` <img class="img-512-0" src="${img02}">`)
-   document.write(` <img class="img-512-0" src="${img03}">`)
-   document.write(` <img class="img-512-0" src="${img04}"><br><br>`)
-
-// Функція вибирає випадкове зображення 
-function showRandomImage(image1, image2, image3, image4) {
-
-   let randomIndex =  1 + Math.floor(Math.random() * 4) // Випадковий індекс (0-3)
-
-   switch (randomIndex) {
-      case 1:
-         return image1;
-         break;
-      case 2:
-         return image2;
-         break;
-      case 3:
-         return image3;
-         break;
-      case 4:
-         return image4;
-         break;
-      }
-
+// Функція отримує кількість рядків від користувача
+function getRowCount() {
+   return parseInt(prompt("Введіть кількість рядків:", "3")) || 1
 }
 
-   let randomImg=showRandomImage(img01, img02, img03, img04)
+// Функція отримує кількість стовпців від користувача
+function getColumnCount() {
+   return parseInt(prompt("Введіть кількість стовпців:", "3")) || 1
+}
 
-      // Виводимо випадково вибране зображення
-      document.write(`Випадкове зображення:<br>`)
-      document.write(`<img class="img-512" src="${randomImg}" alt="Випадкове зображення">`)
+// Функція отримує повідомлення для заповнення таблиці
+function getMessage() {
+   return prompt("Введіть текст для комірок:", "Текст") || "Текст"
+}
+
+// Функція створює таблицю з вказаною кількістю рядків, стовпців і повідомленням
+function createTable(rows, cols, message) {
+   document.write("<table border='1' cellspacing='0' cellpadding='5'>")
+
+   for (let i = 0; i < rows; i++) {
+      document.write("<tr>")
+      for (let j = 0; j < cols; j++) {
+         document.write(`<td class="td-56">${message}</td>`)
+      }
+      document.write("</tr>")
+   }
+
+   document.write("</table>")
+}
+
+// Отримуємо значення від користувача
+let rows = getRowCount()
+let cols = getColumnCount()
+let message = getMessage()
+
+// Виводимо початкові дані
+document.write(`Кількість рядків: ${rows}<br>`)
+document.write(`Кількість стовпців: ${cols}<br>`)
+document.write(`Повідомлення: ${message}<br><br>`)
+
+// Створюємо таблицю
+createTable(rows, cols, message)
+
+
 
 }

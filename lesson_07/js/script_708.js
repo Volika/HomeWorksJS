@@ -1,49 +1,28 @@
 "use strict"
 if (confirm('Почати тестування?')) {
 
-/* 07
-Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у функцію);
-
+/* 08
+   Створити функцію, яка виводить банер, у функцію передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення, тег <span class="span-color">img</span> повине знаходитись у середині тега <span class="span-color">a</span>
 */
 
-  // Вводимо початкові шляхи всіх зображень
-   const img01 = `../img/kozak-01.webp`
-   const img02 = `../img/kozak-02.webp`
-   const img03 = `../img/kozak-03.png`
-   const img04 = `../img/kozak-04.webp`
-
-   document.write(`Можливі зображення:<br>`)
-   document.write(` <img class="img-512-0" src="${img01}">`)
-   document.write(` <img class="img-512-0" src="${img02}">`)
-   document.write(` <img class="img-512-0" src="${img03}">`)
-   document.write(` <img class="img-512-0" src="${img04}"><br><br>`)
-
-// Функція вибирає випадкове зображення 
-function showRandomImage(image1, image2, image3, image4) {
-
-   let randomIndex =  1 + Math.floor(Math.random() * 4) // Випадковий індекс (0-3)
-
-   switch (randomIndex) {
-      case 1:
-         return image1;
-         break;
-      case 2:
-         return image2;
-         break;
-      case 3:
-         return image3;
-         break;
-      case 4:
-         return image4;
-         break;
-      }
-
+// Функція створює банер із зображенням, заголовком і посиланням
+function createBanner(image, title, link) {
+   document.write(`
+      <div>
+         <h2>${title}</h2>
+         <a href="${link}" target="_blank">
+            <img class="img-512" src="${image}" alt="${title}">
+         </a>
+      </div>
+   `)
 }
 
-   let randomImg=showRandomImage(img01, img02, img03, img04)
+// Виклик функції з переданими параметрами
+     createBanner(   
+   `../img/kozak-04.webp`, 
+   "Натисніть, щоб дізнатися більше!", 
+   "https://example.com"
+)
 
-      // Виводимо випадково вибране зображення
-      document.write(`Випадкове зображення:<br>`)
-      document.write(`<img class="img-512" src="${randomImg}" alt="Випадкове зображення">`)
 
 }

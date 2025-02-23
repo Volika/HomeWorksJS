@@ -1,61 +1,40 @@
 "use strict"
 if (confirm('Почати тестування?')) {
-/* 00 Вивести на екран
-A B C D E 
-B C D E F 
-C D E F G 
-D E F G H 
-E F G H I
+
+/* 00 
+Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.
 
 */
+// Функція отримує номер місяця від користувача
+function getMonthNumber() {
 
-// Отримуємо літеру від користувача
-function getUserInput() {
-   let letter
-   while (true) {
-      letter = prompt("Введіть першу літеру (A-Z):").toUpperCase()
-      if (letter >= "A" && letter <= "Z") {
-         return letter
-      }
-      alert("Будь ласка, введіть літеру від A до Z")
+   let month = parseInt(prompt("Введіть номер місяця (1-12):", "1"))
+
+   if (month < 1 || month > 12 || isNaN(month)) {
+
+      month = 1 // Якщо число не в межах 1-12, замінюємо на 1
+      document.write(`Введено некоректне значення, Присвоєно номер - ${month} <br>`)
    }
+   return month
 }
 
-// Отримуємо кількість рядків і літер у рядку від користувача
-function getLettersCount() {
-   let count
-   while (true) {
-      count = prompt("Введіть кількість літер (1-10):", "5")
-      count = parseInt(count)
-      if (count >= 1 && count <= 7) {
-         return count
-      }
-      alert("Будь ласка, введіть число від 1 до 7")
-   }
-}
-
-// Функція виводить рядки букв, перезапускаючи алфавіт після Z
-function printLetters(startLetter, rowCount) {
-   let letterCode = startLetter.charCodeAt(0) // Отримуємо код першої літери
-
-   for (let i = 0; i < rowCount; i++) {
-      let row = ""
-
-      for (let j = 0; j < rowCount; j++) {
-           let currentCode = letterCode + i + j // Обчислюємо код літери
-
-            if (currentCode > 90) { // Якщо код більше 'Z' (90), повертаємося до 'A'
-                currentCode = 65 + (currentCode - 91) // Повертаємося на початок алфавіту
-            }
-         row += String.fromCharCode(currentCode) + " "
-      }
-       document.write(row + "<br>") // Виводимо рядок на екран
+// Функція визначає пору року за номером місяця
+function getSeason(month) {
+   if (month >= 3 && month <= 5) {
+      return "Весна"
+   } else if (month >= 6 && month <= 8) {
+      return "Літо"
+   } else if (month >= 9 && month <= 11) {
+      return "Осінь"
+   } else {
+      return "Зима"
    }
 }
 
 
-   let firstLetter = getUserInput()
-   let rowCount = getLettersCount()
-   printLetters(firstLetter, rowCount)
+// Виклик функцій без main()
+let month = getMonthNumber()
+let season = getSeason(month)
 
+document.write(`номер місяця: ${month} -  Пора року: ${season}`)
 }

@@ -1,13 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Epilogue:regular,500,600,700,800,900&display=swap");
 @font-face {
-  font-family: "Ermilov";
-  src: url("../fonts/Ermilov-Bold.woff2") format("woff2"), url("../fonts/Ermilov-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "Gilroy";
   src: url("../fonts/Gilroy-Medium.woff2") format("woff2");
   font-weight: 500;
@@ -25,41 +18,6 @@
   font-family: "Gilroy";
   src: url("../fonts/Gilroy-Regular.woff2") format("woff2");
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url(../fonts/Roboto-Regular.woff2);
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url(../fonts/Roboto-Medium.woff2);
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Cormorant";
-  src: url(../fonts/Cormorant-Italic.woff2);
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Cormorant";
-  src: url(../fonts/Cormorant-Regular.woff2);
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Cormorant";
-  src: url(../fonts/Cormorant-Bold.woff2);
-  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -480,6 +438,8 @@ textarea {
   left: 0;
   width: 100%;
   z-index: 500;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(240, 240, 240, 0.7)), to(rgba(240, 240, 240, 0.7))), url("../img/concrete-1646788_1920.jpg") 0 0/cover no-repeat;
+  background: linear-gradient(rgba(240, 240, 240, 0.7), rgba(240, 240, 240, 0.7)), url("../img/concrete-1646788_1920.jpg") 0 0/cover no-repeat;
 }
 
 .header__container {
@@ -526,13 +486,22 @@ textarea {
   line-height: 1.33333;
 }
 
+.logo-header__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .logo-header__img {
   width: 3rem;
   height: 3rem;
 }
 
 .logo-header__name {
-  font-weight: 700;
+  font-size: 16px;
+  max-width: 120px;
+  font-weight: 600;
+  padding-inline: 24px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -542,22 +511,35 @@ textarea {
   gap: 1rem;
 }
 
-.logo-header:hover {
+.logo-header__name--main {
+  -webkit-padding-start: 32px;
+          padding-inline-start: 32px;
+  font-weight: 800;
+  font-size: 32px;
+  max-width: none;
+}
+
+.logo-header__link:hover {
   color: rgb(100, 48, 163);
   border-color: initial;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 
+.logo-header__link--exersice {
+  color: rgba(42, 50, 197, 0.5843137255);
+  text-decoration: underline;
+}
+
 .logo-header__number {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  font-size: 2rem;
-  font-weight: 800;
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-size: 24px;
+  font-weight: 600;
   line-height: 1.11111;
   letter-spacing: -0.125rem;
-  -webkit-padding-start: 1.25rem;
-          padding-inline-start: 1.25rem;
+  -webkit-padding-start: 24px;
+          padding-inline-start: 24px;
 }
 
 /* --- main ---- */
@@ -570,13 +552,18 @@ textarea {
   padding: 4.375rem 1.25rem 3.125rem 1.25rem;
 }
 
-.grid__items {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(17.5rem, 1fr));
+.main-list__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 1rem;
 }
 
-.grid__item {
+.main-list__item {
   padding: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -598,7 +585,7 @@ li > img {
   height: 4rem;
 }
 
-.grid__link {
+.main-list__link {
   position: relative;
   color: rgb(156, 88, 239);
   line-height: 1.5;
@@ -611,6 +598,10 @@ li > img {
           margin-block-end: 0.5rem;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
+}
+
+.main-list__link span {
+  color: #000000;
 }
 
 .main__title {
@@ -628,7 +619,7 @@ li > img {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.grid__item img {
+.main-list__item img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 0 bottom;
@@ -641,14 +632,14 @@ li > img {
   /* align-items: end; */
 }
 
-.grid__link:hover {
+.main-list__link:hover {
   color: rgb(100, 48, 163);
   font-weight: 700;
   -webkit-transition: font-weight 0.3s;
   transition: font-weight 0.3s;
 }
 
-.grid__item:hover {
+.main-list__item:hover {
   -webkit-box-shadow: 0.5rem 0.25rem 0.25rem rgb(40, 41, 62);
           box-shadow: 0.5rem 0.25rem 0.25rem rgb(40, 41, 62);
   border-radius: 0.5rem;
@@ -664,17 +655,28 @@ li > img {
   padding-inline: 2rem;
 }
 
-/* Основні стилі */
-body {
-  font-family: "Gilroy", sans-serif;
-  font-size: 1rem;
-  color: #000000;
-  background: url("../img/concrete-1646788_1920.jpg") 0 0/cover no-repeat;
+/* --- main ---- */
+.main {
+  padding-inline: 0.9375rem;
 }
 
-.wrapper {
-  min-height: 100%;
-  overflow: clip;
+.main__container {
+  /* width: 108.75rem; */
+  padding: 4.375rem 1.25rem 3.125rem 1.25rem;
+}
+
+.grid__items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(17.5rem, 1fr));
+  gap: 0.5rem;
+}
+.grid__items--4 {
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 12px;
+}
+
+.grid__item {
+  padding: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -682,27 +684,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: rgba(240, 240, 240, 0.7);
-}
-
-.wrapper > main {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-/* --------------------- */
-[class*=__container] {
-  max-width: 75rem;
-  padding-inline: 0.9375rem;
-  margin: 0 auto;
-}
-
-.wrapper__title {
-  font-size: 1.25rem;
-  border-bottom: 0.0625rem solid black;
-  padding-block: 0.625rem;
-}er-radius: 0.5rem;
+  gap: 0.25rem;
+  border: 0.0625rem solid rgba(156, 88, 239, 0.4);
+  -webkit-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
+  background-color: rgb(225, 225, 225);
+  border-radius: 0.5rem;
 }
 
 li > img {

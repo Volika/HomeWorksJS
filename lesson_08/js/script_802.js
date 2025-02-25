@@ -31,7 +31,7 @@ function getLowVisitorDays(visitors) {
 }
 
 // Функція знаходить мінімум відвідувачів
-function getMinVisitorDays(visitors) {
+function getMinVisitorValue(visitors) {
    let min = visitors[0]
    for (let i = 1; i < visitors.length; i++) {
       if (visitors[i] < min) {
@@ -44,7 +44,7 @@ function getMinVisitorDays(visitors) {
 // Функція знаходить номери днів, коли відвідувачів було мінімально
 function getMinVisitorDays(visitors) {
    let days = ""
-   let min = getMinVisitorDays(visitors)
+   let min = getMinVisitorValue(visitors)
  
    for (let i = 0; i < visitors.length; i++) {
       if (visitors[i] === min) {

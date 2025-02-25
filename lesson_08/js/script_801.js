@@ -34,16 +34,37 @@ function getAverage(grades) {
 
 // Функція визначає категорію учня
 function getCategory(grades) {
-   for (let i = 0; i < grades.length; i++) {
-      if (grades[i] === 2) return "Двійочник"
+   // for (let i = 0; i < grades.length; i++) {
+   //    if (grades[i] === 2) return "Двійочник"
+   // }
+   // for (let i = 0; i < grades.length; i++) {
+   //    if (grades[i] === 3) return "Трійочник"
+   // }
+   // for (let i = 0; i < grades.length; i++) {
+   //    if (grades[i] < 4) return "Хорошист"
+   // }
+   // return "Відмінник"
+
+let resuit = "відсутня"
+let value = grades[0]
+   for (let i = 1; i < grades.length; i++) {
+      if (value > grades[i]) value = grades[i]
    }
-   for (let i = 0; i < grades.length; i++) {
-      if (grades[i] === 3) return "Трійочник"
+   // alert(value, result)
+   switch (value) {
+      case 2:
+      resuit = "Двійочник"
+      break
+      case 3:
+      resuit = "Трійочник"
+      break
+      case 4:
+      resuit = "Хорошист"
+      break
+      case 5:
+      resuit = "Відмінник"
    }
-   for (let i = 0; i < grades.length; i++) {
-      if (grades[i] < 4) return "Хорошист"
-   }
-   return "Відмінник"
+      return resuit
 }
 
 // Отримуємо кількість предметів

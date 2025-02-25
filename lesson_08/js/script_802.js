@@ -1,73 +1,93 @@
 "use strict"
 if (confirm('Почати тестування?')) {
 
-/* 01 
-   Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)).
+/* 2 
+      Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:<br>
+   ●	номери днів, протягом яких кількість відвідувачів була меншою за 20;<br>
+   ●	номери днів, коли кількість відвідувачів була мінімальною;<br>
+   ●	номери днів, коли кількість відвідувачів була мінімальною;<br>
+   ●	загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
 */
-
-// Функція отримує кількість предметів від користувача
-function getSubjectCount() {
-   return parseInt(prompt(`Введіть кількість предметів:`, `5`)) || 1
+// Функція генерує випадкову кількість відвідувачів для кожного дня тижня (від 5 до 50)
+//  5 + Math.floor(Math.random() * (50 - 5 +1))
+function generateVisitors() {
+   let visitors = []
+   for (let i = 0; i < 7; i++) {
+       visitors.push(5 + Math.floor(Math.random() *46))
+   }
+   return visitors
 }
 
-// Функція генерує випадкові оцінки (від 2 до 5)
-function generateGrades(count) {
-   let grades = []
-   for (let i = 0; i < count; i++) {
-
-      //  grades.push(2 + Math.floor(Math.random() * 4))
-
-      let value = parseInt(prompt(`Введіть оцінку з ${i+1} предмету:`, `5`)) || 2
-      grades.push(value)
+// Функція знаходить номери днів, коли відвідувачів було менше за 20
+function getLowVisitorDays(visitors) {
+   let days = ""
+   for (let i = 0; i < visitors.length; i++) {
+      if (visitors[i] < 20) {
+         if (days !== "") days += ", "
+         days += (i + 1)
+      }
    }
-   return grades
+   return days || "Немає таких днів"
 }
 
-// Функція обчислює середній бал
-function getAverage(grades) {
-   let sum = 0
-   for (let i = 0; i < grades.length; i++) {
-      sum += grades[i]
+// Функція знаходить номери днів, коли відвідувачів було мінімально
+function getMinVisitorDays(visitors) {
+   let min = visitors[0]
+   let days = ""
+
+   for (let i = 1; i < visitors.length; i++) {
+      if (visitors[i] < min) {
+         min = visitors[i]
+      }
    }
-   return sum / grades.length
+
+   for (let i = 0; i < visitors.length; i++) {
+      if (visitors[i] === min) {
+         if (days !== "") days += ", "
+         days += (i + 1)
+      }
+   }
+
+   return days
 }
 
-// Функція визначає категорію учня
-function getCategory(grades) {
-   for (let i = 0; i < grades.length; i++) {
-      if (grades[i] === 2) return "Двійочник"
+// Функція підраховує кількість відвідувачів у робочі дні (1-5)
+function getWorkdaysTotal(visitors) {
+   let workdaysTotal = 0
+   for (let i = 0; i < 5; i++) {
+      workdaysTotal += visitors[i]
    }
-   for (let i = 0; i < grades.length; i++) {
-      if (grades[i] === 3) return "Трійочник"
-   }
-   for (let i = 0; i < grades.length; i++) {
-      if (grades[i] < 4) return "Хорошист"
-   }
-   return "Відмінник"
+   return workdaysTotal
 }
 
-// Отримуємо кількість предметів
-let subjectCount = getSubjectCount()
+// Функція підраховує кількість відвідувачів у вихідні (6-7)
+function getWeekendsTotal(visitors) {
+   let weekendsTotal = 0
+   for (let i = 5; i < 7; i++) {
+      weekendsTotal += visitors[i]
+   }
+   return weekendsTotal
+}
 
-// Генеруємо оцінки
-let grades = generateGrades(subjectCount)
+// Генеруємо масив відвідувачів магазину на тиждень
+let visitors = generateVisitors()
 
-// Обчислюємо середній бал
-// let average = getAverage(grades)
-
-// Визначаємо категорію учня
-// let category = getCategory(grades)
+// Отримуємо результати обчислень
+let lowVisitorDays = getLowVisitorDays(visitors)
+let minVisitorDays = getMinVisitorDays(visitors)
+let workdaysTotal = getWorkdaysTotal(visitors)
+let weekendsTotal = getWeekendsTotal(visitors)
 
 // Виводимо результати
-document.write(`Кількість предметів: ${subjectCount}<br>`)
-document.write(`Оцінки:  <br>`)
-
-for (let i = 0; i < grades.length; i++) {
-   document.write(` ${grades[i]}, `)
+document.write(`Відвідувачі по днях тижня:  <br>`)
+for (let i = 0; i < visitors.length; i++) {
+   document.write(` ${i+1} день: ${visitors[i]}, <br>`)
 }
-document.write(`<br>`)
-document.write(`Середній бал: ${getAverage(grades).toFixed(2)}<br>`)
-document.write(`Категорія: ${getCategory(grades)}<br>`)
+document.write(` <hr> <br> `)
+document.write(`Дні, коли відвідувачів було менше за 20: ${lowVisitorDays}<br>`)
+document.write(`Дні з мінімальною кількістю відвідувачів: ${minVisitorDays}<br>`)
+document.write(`Загальна кількість відвідувачів у робочі дні: ${workdaysTotal}<br>`)
+document.write(`Загальна кількість відвідувачів у вихідні: ${weekendsTotal}<br>`)
 
 
 }

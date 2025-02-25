@@ -61,11 +61,11 @@ let grades = generateGrades(subjectCount)
 // Виводимо результати
 document.write(`Кількість предметів: ${subjectCount}<br>`)
 document.write(`Оцінки:  <br>`)
-
-for (let i = 0; i < grades.length; i++) {
+document.write(` <hr> `)
+for (let i = 0; i < subjectCount; i++) {
    document.write(` ${grades[i]}, `)
 }
-document.write(`<br>`)
+document.write(` <hr> <br> `)
 document.write(`Середній бал: ${getAverage(grades).toFixed(2)}<br>`)
 document.write(`Категорія: ${getCategory(grades)}<br>`)
 

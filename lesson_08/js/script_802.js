@@ -88,8 +88,8 @@ for (let i = 0; i < visitors.length; i++) {
    document.write(` ${i+1} день: ${visitors[i]}, <br>`)
 }
 document.write(` <hr> <br> `)
-document.write(`Дні, коли відвідувачів було менше за 20: ${lowVisitorDays}<br>`)
-document.write(`Дні з мінімальною кількістю відвідувачів: ${minVisitorDays}<br>`)
+document.write(`Номери днів, коли відвідувачів було менше за 20: ${lowVisitorDays}<br>`)
+document.write(`Номери днів з мінімальною кількістю відвідувачів: ${minVisitorDays}<br>`)
 document.write(`Загальна кількість відвідувачів у робочі дні: ${workdaysTotal}<br>`)
 document.write(`Загальна кількість відвідувачів у вихідні: ${weekendsTotal}<br>`)
 

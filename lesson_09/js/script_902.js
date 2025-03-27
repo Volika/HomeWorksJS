@@ -7,20 +7,27 @@ if (confirm('Почати тестування?')) {
 */
 
 function getArraySize() {
-   return parseInt(prompt("Введіть кількість елементів у масиві:", "5")) || 1
+   let input = prompt("Введіть кількість елементів у масиві:", "6")
+   let size = parseInt(input)
+   if (isNaN(size) || size <= 0) {
+       size = 1
+   }
+   return size
 }
 
-function createZeroArray(size) {
-   let arr = []
-   for (let i = 0; i < size; i++) {
-       arr[i] = 0
-   }
+function createCustomArray(size) {
+   let arr = Array(size)
+   let half = Math.floor(size / 2)
+
+   arr.fill(1, 0, half)          
+   arr.fill(7, half)            
+
    return arr
 }
 
 let size = getArraySize()
-let zeroArray = createZeroArray(size)
+let resultArray = createCustomArray(size)
 
-document.write(`Масив із ${size} нулів: [${zeroArray.join(", ")}]`)
+document.write(`Масив із ${size} елементів: [${resultArray.join(", ")}]`)
 
 }

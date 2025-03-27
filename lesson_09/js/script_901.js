@@ -7,15 +7,18 @@ if (confirm('Почати тестування?')) {
 */
 
 function getArraySize() {
-   return parseInt(prompt("Введіть кількість елементів у масиві:", "5")) || 1
+   let input = prompt("Введіть кількість елементів у масиві:", "5")
+   let size = parseInt(input)
+
+   if (isNaN(size) || size <= 0) {
+       size = 1
+   }
+
+   return size
 }
 
 function createZeroArray(size) {
-   let arr = []
-   for (let i = 0; i < size; i++) {
-       arr[i] = 0
-   }
-   return arr
+   return Array(size).fill(0)
 }
 
 let size = getArraySize()
